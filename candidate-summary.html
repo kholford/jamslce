@@ -1,0 +1,542 @@
+<!doctype html>
+<html dir="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Initial List of Candidate Living/Care Facilities</title>
+<style>
+@charset "utf-8";
+
+html {
+  font-size: 100%;
+  font-family: -apple-system, system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0.7in 1em 0 1em;
+  font-size: 16pt;
+  line-height: 1.2;
+  position: relative;
+}
+
+@page {
+  margin: 0.5in 0.75in 0.5in 0.75in;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+pre,
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  border-radius: 3px;
+  background-color: #F8F8F8;
+  color: inherit;
+}
+
+pre {
+  padding: .5em;
+  overflow-x: auto;
+}
+
+code {
+  padding: .15em .3em;
+}
+
+pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.table-scroll-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 1em 0;
+}
+
+.table-scroll-wrap table {
+  margin: 0;
+  border: 1px solid #aaa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: max-content;
+  max-width: none;
+}
+
+.table-scroll-wrap table.normal-table th,
+.table-scroll-wrap table.normal-table td {
+  padding: .25em .5em;
+  white-space: nowrap;
+}
+
+.table-scroll-wrap table.wide-matrix-table {
+  font-size: 0.72em;
+}
+
+.table-scroll-wrap table.wide-matrix-table th,
+.table-scroll-wrap table.wide-matrix-table td {
+  padding: .12em .22em;
+  white-space: nowrap;
+}
+
+th {
+  background: #efefef;
+  border: 1px solid #ccc;
+}
+
+td {
+  border: 1px solid #ccc;
+}
+
+table.no-borders,
+table.no-borders th,
+table.no-borders td {
+  border: none !important;
+  background: transparent;
+}
+
+table.align-field-titles-values {
+  border-collapse: collapse;
+}
+
+table.align-field-titles-values td {
+  border: none;
+  padding: 2px 4px;
+  white-space: normal;
+}
+
+table.align-field-titles-values td:first-child {
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+table.align-field-titles-values td:last-child {
+  text-align: left;
+}
+
+#draft-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 0 0 0.6em;
+}
+
+ul,
+ol {
+  margin: 0 0 0.6em 1.4em;
+  padding-left: 1.2em;
+}
+
+li {
+  margin: 0 0 0.2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.7em;
+  margin-bottom: 0.6em;
+}
+
+h1 + ul,
+h1 + ol,
+h2 + ul,
+h2 + ol,
+h3 + ul,
+h3 + ol,
+h4 + ul,
+h4 + ol,
+h5 + ul,
+h5 + ol,
+h6 + ul,
+h6 + ol {
+  margin-top: 0;
+}
+
+.modified-stamp {
+  position: fixed;
+  font-size: 10pt;
+  line-height: 1.1;
+  color: #999;
+  z-index: 9999;
+  pointer-events: none;
+  white-space: nowrap;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  left: auto;
+}
+
+.modified-stamp.position-1 {
+  top: 0.5in;
+  right: 0.75in;
+}
+
+.modified-stamp.position-0 {
+  bottom: 0.5in;
+  right: 0.75in;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  table {
+    border-color: #aaa;
+  }
+
+  th {
+    background: #efefef;
+    border-color: #ccc;
+  }
+
+  td {
+    border-color: #ccc;
+  }
+
+  .table-scroll-wrap {
+    overflow: visible;
+    width: auto;
+    max-width: none;
+    margin: 1em 0;
+  }
+
+  .table-scroll-wrap table {
+    display: table;
+    width: auto;
+    max-width: none;
+    font-size: 0.9em;
+  }
+
+  .table-scroll-wrap table.wide-matrix-table {
+    font-size: 0.72em;
+  }
+
+  .modified-stamp {
+    position: fixed;
+    font-size: 10pt;
+    line-height: 1.1;
+    color: #999;
+    z-index: 9999;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    left: auto;
+  }
+
+  .modified-stamp.position-1 {
+    top: 0.5in;
+    right: 0.75in;
+  }
+
+  .modified-stamp.position-0 {
+    bottom: 0.5in;
+    right: 0.75in;
+  }
+}
+</style>
+</head>
+<body>
+<div class="modified-stamp position-1">Modified: 4/1/2026 13:19:59</div>
+
+<div style="text-align:center; font-size:1.7em; font-weight:bold; line-height:0.75; margin-top:0; margin-bottom:0.2em;">
+Initial List of Candidate Living/Care Facilities
+</div>
+
+<h2>Bottom Line Up Front</h2>
+
+<ul>
+<li>We now have a strong and practical candidate universe of <strong>12 communities</strong>, which is a reasonable upper limit for initial comparison.</li>
+<li>The list naturally divides into <strong>three groups</strong>: strongest full-continuum communities, strong challengers, and more limited-continuum comparison options.</li>
+<li>For Parkinson’s progression, <strong>continuum depth, transfer thresholds, overnight support, and ability to stay within the same system</strong> matter more than amenities alone.</li>
+<li>Our plan is to use a staged process: <strong>phone screening first, then targeted tours, then short finalist visits</strong>.</li>
+<li>Our immediate goal is to narrow the list to <strong>5–6 communities for tours</strong>, then reduce to <strong>2–3 finalists</strong>.</li>
+</ul>
+
+<h2>1. Full Candidate Set (normalized)</h2>
+
+<h3>1.1. Tier 1 – Strong Care Continuum (AL-&gt;SNF) / Higher Clinical Depth</h3>
+
+<ul>
+<li>Saint John’s On The Lake (Milwaukee – East Side)</li>
+<li>Three Pillars Senior Living Communities (Dousman)</li>
+<li>Newcastle Place (Mequon)</li>
+<li>Eastcastle Place (Milwaukee)</li>
+<li>Shorehaven (Oconomowoc)</li>
+<li>Harwood Place / Lutheran Home campus (Wauwatosa)</li>
+</ul>
+
+<h3>1.2. Tier 2 – Strong Challengers / Mixed Continuum</h3>
+
+<ul>
+<li>Tudor Oaks Senior Living Community (Muskego)</li>
+<li>LindenGrove (Waukesha campus)</li>
+<li>The Arboretum Senior Living (Menomonee Falls)</li>
+</ul>
+
+<h3>1.3. Tier 3 – Assisted Living / Lifestyle / Comparison Options</h3>
+
+<ul>
+<li>Forest Ridge Senior Community (Hales Corners)</li>
+<li>Library Square Senior Living (West Allis)</li>
+<li>The Courtyard at Sussex</li>
+</ul>
+
+<hr />
+
+<h2>2. Strategic Positioning (what each one “Is”)</h2>
+
+<h3>2.1. High-Level Comparison</h3>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col />
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Community </th>
+	<th> Type </th>
+	<th> Key Strength </th>
+	<th> Key Risk </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Saint John’s </td>
+	<td> Urban Life Plan / CCRC </td>
+	<td> Strong clinical depth, central location, Life Care structure </td>
+	<td> Cost / entrance-fee sensitivity </td>
+</tr>
+<tr>
+	<td> Three Pillars </td>
+	<td> Full campus CCRC </td>
+	<td> Excellent continuum, strong rehab / SNF depth </td>
+	<td> Distance from Milwaukee </td>
+</tr>
+<tr>
+	<td> Newcastle Place </td>
+	<td> Upscale Life Plan / CCRC </td>
+	<td> Polished environment, strong IL→AL→SNF path </td>
+	<td> Need to verify clinical depth vs hospitality feel </td>
+</tr>
+<tr>
+	<td> Eastcastle Place </td>
+	<td> Urban Life Plan / CCRC </td>
+	<td> Established continuum, East Side location </td>
+	<td> Aging infrastructure / cost </td>
+</tr>
+<tr>
+	<td> Shorehaven </td>
+	<td> Full campus continuum </td>
+	<td> Strong on-campus transitions, rehab / SNF depth </td>
+	<td> Less modern feel; verify AL thresholds </td>
+</tr>
+<tr>
+	<td> Harwood / Lutheran </td>
+	<td> Connected campus continuum </td>
+	<td> Excellent location, strong clinical support via linked campus </td>
+	<td> Need to verify transition mechanics / priority access </td>
+</tr>
+<tr>
+	<td> Tudor Oaks </td>
+	<td> Faith-based campus continuum </td>
+	<td> Broad continuum, 24/7 medical support signal </td>
+	<td> May feel institutional to some </td>
+</tr>
+<tr>
+	<td> LindenGrove </td>
+	<td> Care-focused AL / memory / therapies </td>
+	<td> Good care reputation, therapy access </td>
+	<td> Less clear long-term continuum than classic CCRC </td>
+</tr>
+<tr>
+	<td> Arboretum </td>
+	<td> AL / memory / IL </td>
+	<td> Supports higher-acuity residents better than many ALs </td>
+	<td> No clearly established on-site SNF </td>
+</tr>
+<tr>
+	<td> Forest Ridge </td>
+	<td> Senior apartments + support services </td>
+	<td> Comfortable apartment model, easier emotional transition </td>
+	<td> Likely lower care ceiling </td>
+</tr>
+<tr>
+	<td> Library Square </td>
+	<td> IL + AL + respite </td>
+	<td> Strong location, potentially lower cost </td>
+	<td> No clear on-site SNF pathway </td>
+</tr>
+<tr>
+	<td> Courtyard Sussex </td>
+	<td> Smaller AL </td>
+	<td> Intimate environment </td>
+	<td> No on-site SNF / limited care continuum, Medicaid transition risk </td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+
+<h2>3. Early Strategic Read</h2>
+
+<h3>3.1. Most Likely Strong Finalists</h3>
+
+<p>These are the communities that currently look strongest on long-term structure and progression risk.</p>
+
+<ul>
+<li>Saint John’s</li>
+<li>Three Pillars</li>
+<li>Newcastle</li>
+<li>Shorehaven</li>
+<li>Harwood / Lutheran</li>
+<li>Eastcastle</li>
+</ul>
+
+<h3>3.2. Strong Challengers / Backup Candidates</h3>
+
+<p>These may move up depending on phone-screen answers.</p>
+
+<ul>
+<li>Tudor Oaks</li>
+<li>LindenGrove</li>
+<li>Arboretum</li>
+</ul>
+
+<h3>3.3. Comparison / Lower-Continuum Options</h3>
+
+<p>These may still be worthwhile, but currently look weaker for long-term progression planning.</p>
+
+<ul>
+<li>Forest Ridge</li>
+<li>Library Square</li>
+<li>Courtyard Sussex</li>
+</ul>
+
+<hr />
+
+<h2>4. What We Are Trying to Learn in the Initial Calls</h2>
+
+<p>The initial phone screening is meant to answer one main question:</p>
+
+<blockquote>
+<p><strong>Can this community safely support increasing care needs as Parkinson’s progresses, without creating an early forced move?</strong></p>
+</blockquote>
+
+<p>Key questions include:</p>
+
+<ul>
+<li>Can they manage <strong>two-person transfers</strong>?</li>
+<li>How quickly is <strong>nighttime assistance</strong> typically available?</li>
+<li>At what point would someone need to leave assisted living?</li>
+<li>Can she remain <strong>within the same campus or system</strong> if care needs increase?</li>
+<li>What happens if <strong>private-pay funds run down</strong>?</li>
+<li>Is there a <strong>Medicaid skilled nursing pathway</strong>, if needed later?</li>
+</ul>
+
+<hr />
+
+<h2>5. Initial Phone-Screen Priority Order</h2>
+
+<h3>Call First – Highest Probability Finalists</h3>
+
+<ol>
+<li>Saint John’s</li>
+<li>Three Pillars</li>
+<li>Newcastle</li>
+<li>Shorehaven</li>
+<li>Harwood / Lutheran</li>
+<li>Eastcastle</li>
+</ol>
+
+<h3>Call Next – Strong Challengers</h3>
+
+<ol>
+<li>Tudor Oaks</li>
+<li>LindenGrove</li>
+<li>Arboretum</li>
+</ol>
+
+<h3>Lower-Priority Comparison Calls</h3>
+
+<ol>
+<li>Forest Ridge</li>
+<li>Library Square</li>
+<li>Courtyard Sussex</li>
+</ol>
+
+<hr />
+
+<h2>6. Current Planning Assumption</h2>
+
+<p>Our current likely decision path is:</p>
+
+<ol>
+<li>Phone-screen all 12 communities</li>
+<li>Narrow to 5–6 tour candidates</li>
+<li>Do detailed tours of those finalists</li>
+<li>Reduce to 2–3 strongest options</li>
+<li>Then do shorter follow-up visits with Mom for comfort and fit</li>
+</ol>
+
+<p>This allows the first pass to focus on:</p>
+
+<ul>
+<li>care depth</li>
+<li>policy</li>
+<li>staffing</li>
+<li>financial continuity</li>
+</ul>
+
+<p>Then the later pass can focus more on:</p>
+
+<ul>
+<li>comfort</li>
+<li>atmosphere</li>
+<li>room feel</li>
+<li>personal preference</li>
+</ul>
+
+<hr />
+
+<h2>7. Immediate Next Step</h2>
+
+<p>The next step is <strong>short phone screening calls</strong> to all 12 communities, with the highest-priority 6 called first.</p>
+
+<p>Goal:</p>
+
+<ul>
+<li>reduce to <strong>5–6 tour candidates</strong></li>
+<li>then reduce to <strong>2–3 finalists for in-person visits</strong></li>
+</ul>
+</body>
+</html>
