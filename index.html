@@ -3,179 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senior Living Evaluation Hub</title>
   <style>
-    :root {
-      --bg: #f6f7f9;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #5b6472;
-      --border: #d8dde6;
-      --accent: #2f5d8a;
-      --accent-soft: #eaf2fa;
-    }
-
+    :root { --bg:#f6f7f9; --card:#ffffff; --text:#1f2937; --muted:#5b6472; --border:#d8dde6; --accent:#2f5d8a; --accent-soft:#eaf2fa; }
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 32px 20px 56px;
-    }
-
-    .hero {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px 24px;
-      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 10px;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 28px;
-    }
-
-    p {
-      margin: 0 0 12px;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .badge {
-      background: var(--accent-soft);
-      color: var(--accent);
-      border: 1px solid #cddff2;
-      border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 16px 16px;
-      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-    }
-
-    .card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.96rem;
-      min-height: 72px;
-    }
-
-    .link-row {
-      margin-top: 14px;
-    }
-
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      color: white;
-      background: var(--accent);
-      border-radius: 10px;
-      padding: 10px 14px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .btn.secondary {
-      background: white;
-      color: var(--accent);
-      border: 1px solid var(--border);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .list {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .list li {
-      margin-bottom: 8px;
-    }
-
-    footer {
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    code.inline {
-      background: #eef2f7;
-      border: 1px solid #dde5ef;
-      border-radius: 6px;
-      padding: 1px 6px;
-      font-size: 0.92em;
-    }
-
-    @media (max-width: 720px) {
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 1.65rem;
-      }
-    }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+    .wrap { max-width:1060px; margin:0 auto; padding:32px 20px 56px; }
+    .hero { background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%); border:1px solid var(--border); border-radius:18px; padding:28px 24px; box-shadow:0 4px 18px rgba(15,23,42,0.05); }
+    h1,h2,h3 { margin:0 0 10px; line-height:1.2; }
+    h1 { font-size:2rem; text-align:center; }
+    h2 { font-size:1.25rem; margin-top:28px; }
+    p { margin:0 0 12px; }
+    .muted { color:var(--muted); text-align:center; }
+    .badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; justify-content:center; }
+    .badge { background:var(--accent-soft); color:var(--accent); border:1px solid #cddff2; border-radius:999px; padding:7px 12px; font-size:0.95rem; font-weight:600; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:18px; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px 16px 16px; box-shadow:0 2px 10px rgba(15,23,42,0.04); }
+    .card h3 { font-size:1.05rem; margin-bottom:8px; }
+    .card p { color:var(--muted); font-size:0.96rem; min-height:72px; }
+    .link-row { margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; }
+    .btn { display:inline-block; text-decoration:none; color:white; background:var(--accent); border-radius:10px; padding:10px 14px; font-weight:600; font-size:0.95rem; }
+    .btn.secondary { background:white; color:var(--accent); border:1px solid var(--border); }
+    .two-col { display:grid; grid-template-columns:1.1fr 0.9fr; gap:16px; margin-top:18px; }
+    .list { margin:0; padding-left:18px; }
+    .list li { margin-bottom:8px; }
+    footer { margin-top:28px; color:var(--muted); font-size:0.9rem; }
+    code.inline { background:#eef2f7; border:1px solid #dde5ef; border-radius:6px; padding:1px 6px; font-size:0.92em; }
+    @media (max-width:720px){ .two-col{grid-template-columns:1fr;} h1{font-size:1.65rem;} }
   </style>
 </head>
 <body>
   <div class="wrap">
     <section class="hero">
-<h1 style="text-align:center;">
-  Judith A McMahon<br>
-  Senior Living Community Evaluation Hub
-</h1>
-      <p class="muted">
-        Central navigation page for the senior living community evaluation project.
-        Use this page as the starting point for screening, tours, scoring, notes, and VA benefit research.
-      </p>
+      <h1>Judith A. McMahon<br>Senior Living Community Evaluation Hub</h1>
+      <p class="muted">Central navigation page for the senior living community evaluation project. Use this page as the starting point for screening, tours, scoring, notes, and VA benefit research.</p>
       <div class="badges">
         <span class="badge">Current Phase: Phone Screening</span>
         <span class="badge">Candidate Universe: 12 Communities</span>
@@ -183,87 +44,91 @@
       </div>
     </section>
 
-    <h2>Documents</h2>
+    <h2>Core documents</h2>
     <div class="grid">
       <article class="card">
         <h3>Candidate Summary</h3>
-        <p>
-          High-level overview of the full candidate list, tiers, strategic positioning, and initial calling priorities.
-        </p>
-        <div class="link-row">
-          <a class="btn" href="candidate-summary.html">Open candidate-summary.html</a>
-        </div>
+        <p>High-level overview of the full candidate list, tiers, strategic positioning, and initial calling priorities.</p>
+        <div class="link-row"><a class="btn" href="candidate-summary.html">Open candidate-summary.html</a></div>
       </article>
-
       <article class="card">
         <h3>Evaluation System</h3>
-        <p>
-          Full working system with comparison matrix, Parkinson’s lens, intelligence notes, scoring framework, and ranking data.
-        </p>
-        <div class="link-row">
-          <a class="btn" href="evaluation-system.html">Open evaluation-system.html</a>
-        </div>
+        <p>Full working system with comparison matrix, Parkinson’s lens, intelligence notes, scoring framework, and ranking data.</p>
+        <div class="link-row"><a class="btn" href="evaluation-system.html">Open evaluation-system.html</a></div>
       </article>
-
       <article class="card">
-        <h3>Tour Form</h3>
-        <p>
-          Working interview and tour worksheet for phone screens, facility visits, and structured note capture.
-        </p>
-        <div class="link-row">
-          <a class="btn" href="eval-form.html">Open eval-form.html</a>
-        </div>
+        <h3>Evaluation Form</h3>
+        <p>Reordered working form for phone screening, tours, and post-tour scoring. This replaces the earlier tour-form layout.</p>
+        <div class="link-row"><a class="btn" href="eval-form.html">Open eval-form.html</a><a class="btn secondary" href="tour-form.html">Legacy tour-form.html</a></div>
       </article>
-
       <article class="card">
         <h3>Decision Log</h3>
-        <p>
-          Post-tour summary, scorecard notes, shortlist movement, concerns, and final decision reasoning.
-        </p>
-        <div class="link-row">
-          <a class="btn" href="decision-log.html">Open decision-log.html</a>
-        </div>
+        <p>Post-call and post-tour synthesis, shortlist movement, concerns, and final decision reasoning.</p>
+        <div class="link-row"><a class="btn" href="decision-log.html">Open decision-log.html</a></div>
       </article>
-
       <article class="card">
         <h3>VA Benefits</h3>
-        <p>
-          Surviving spouse / Aid &amp; Attendance workstream, eligibility questions, contacts, required documents, and notes.
-        </p>
-        <div class="link-row">
-          <a class="btn" href="va-benefits.html">Open va-benefits.html</a>
-        </div>
+        <p>Surviving spouse / Aid &amp; Attendance workstream, eligibility questions, required documents, and notes.</p>
+        <div class="link-row"><a class="btn" href="va-benefits.html">Open va-benefits.html</a></div>
       </article>
+    </div>
+
+    <h2>Facility-specific working forms</h2>
+    <div class="card">
+      <p>Use this section as the repository for individual facility worksheets. Duplicate <code class="inline">eval-form.html</code> for each community and save the copy under a facility-specific filename.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Primary candidates</h3>
+          <ul class="list">
+            <li><a href="forms/three-pillars.html">Three Pillars</a></li>
+            <li><a href="forms/shorehaven.html">Shorehaven</a></li>
+            <li><a href="forms/saint-johns.html">Saint John’s</a></li>
+            <li><a href="forms/newcastle-place.html">Newcastle Place</a></li>
+            <li><a href="forms/harwood-lutheran.html">Harwood / Lutheran</a></li>
+            <li><a href="forms/tudor-oaks.html">Tudor Oaks</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Secondary candidates</h3>
+          <ul class="list">
+            <li><a href="forms/eastcastle-place.html">Eastcastle Place</a></li>
+            <li><a href="forms/lindengrove.html">LindenGrove</a></li>
+            <li><a href="forms/arboretum.html">The Arboretum</a></li>
+            <li><a href="forms/forest-ridge.html">Forest Ridge</a></li>
+            <li><a href="forms/library-square.html">Library Square</a></li>
+            <li><a href="forms/courtyard-sussex.html">Courtyard at Sussex</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="two-col">
       <section class="card">
         <h3>Recommended workflow</h3>
         <ol class="list">
-          <li>Review <strong>Candidate Summary</strong> to confirm the current universe and initial priorities.</li>
-          <li>Use <strong>Evaluation System</strong> for the side-by-side matrix, intelligence notes, and scoring reference.</li>
-          <li>Use <strong>Evaluation Form</strong> during phone calls and tours.</li>
-          <li>Record impressions and movement decisions in <strong>Decision Log</strong>.</li>
+          <li>Review <strong>Candidate Summary</strong> to confirm priorities.</li>
+          <li>Use <strong>Evaluation System</strong> for matrix, intelligence notes, and scoring reference.</li>
+          <li>Copy <strong>eval-form.html</strong> to a facility-specific form before each call or tour.</li>
+          <li>Capture raw data in the facility form, then summarize movement decisions in <strong>Decision Log</strong>.</li>
           <li>Track the military widow / surviving spouse benefit workstream in <strong>VA Benefits</strong>.</li>
         </ol>
       </section>
-
       <section class="card">
-        <h3>Suggested repository pages</h3>
+        <h3>Suggested repository structure</h3>
         <ul class="list">
           <li><code class="inline">index.html</code></li>
           <li><code class="inline">candidate-summary.html</code></li>
           <li><code class="inline">evaluation-system.html</code></li>
           <li><code class="inline">eval-form.html</code></li>
+          <li><code class="inline">tour-form.html</code> (legacy)</li>
           <li><code class="inline">decision-log.html</code></li>
           <li><code class="inline">va-benefits.html</code></li>
+          <li><code class="inline">forms/</code> (individual facility forms)</li>
         </ul>
       </section>
     </div>
 
-    <footer>
-      Publish target: <code class="inline">https://kholford.github.io/jamslce</code>
-    </footer>
+    <footer>Publish target: <code class="inline">https://kholford.github.io/jamslce</code></footer>
   </div>
 </body>
 </html>
