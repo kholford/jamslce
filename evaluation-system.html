@@ -1,0 +1,2595 @@
+<!doctype html>
+<html dir="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senior Living Community Evaluation System</title>
+<style>
+@charset "utf-8";
+
+html {
+  font-size: 100%;
+  font-family: -apple-system, system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0.7in 1em 0 1em;
+  font-size: 16pt;
+  line-height: 1.2;
+  position: relative;
+}
+
+@page {
+  margin: 0.5in 0.75in 0.5in 0.75in;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+pre,
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  border-radius: 3px;
+  background-color: #F8F8F8;
+  color: inherit;
+}
+
+pre {
+  padding: .5em;
+  overflow-x: auto;
+}
+
+code {
+  padding: .15em .3em;
+}
+
+pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.table-scroll-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 1em 0;
+}
+
+.table-scroll-wrap table {
+  margin: 0;
+  border: 1px solid #aaa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: max-content;
+  max-width: none;
+}
+
+.table-scroll-wrap table.normal-table th,
+.table-scroll-wrap table.normal-table td {
+  padding: .25em .5em;
+  white-space: nowrap;
+}
+
+.table-scroll-wrap table.wide-matrix-table {
+  font-size: 0.72em;
+}
+
+.table-scroll-wrap table.wide-matrix-table th,
+.table-scroll-wrap table.wide-matrix-table td {
+  padding: .12em .22em;
+  white-space: nowrap;
+}
+
+th {
+  background: #efefef;
+  border: 1px solid #ccc;
+}
+
+td {
+  border: 1px solid #ccc;
+}
+
+table.no-borders,
+table.no-borders th,
+table.no-borders td {
+  border: none !important;
+  background: transparent;
+}
+
+table.align-field-titles-values {
+  border-collapse: collapse;
+}
+
+table.align-field-titles-values td {
+  border: none;
+  padding: 2px 4px;
+  white-space: normal;
+}
+
+table.align-field-titles-values td:first-child {
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+table.align-field-titles-values td:last-child {
+  text-align: left;
+}
+
+#draft-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 0 0 0.6em;
+}
+
+ul,
+ol {
+  margin: 0 0 0.6em 1.4em;
+  padding-left: 1.2em;
+}
+
+li {
+  margin: 0 0 0.2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.7em;
+  margin-bottom: 0.6em;
+}
+
+h1 + ul,
+h1 + ol,
+h2 + ul,
+h2 + ol,
+h3 + ul,
+h3 + ol,
+h4 + ul,
+h4 + ol,
+h5 + ul,
+h5 + ol,
+h6 + ul,
+h6 + ol {
+  margin-top: 0;
+}
+
+.modified-stamp {
+  position: fixed;
+  font-size: 10pt;
+  line-height: 1.1;
+  color: #999;
+  z-index: 9999;
+  pointer-events: none;
+  white-space: nowrap;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  left: auto;
+}
+
+.modified-stamp.position-1 {
+  top: 0.5in;
+  right: 0.75in;
+}
+
+.modified-stamp.position-0 {
+  bottom: 0.5in;
+  right: 0.75in;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  table {
+    border-color: #aaa;
+  }
+
+  th {
+    background: #efefef;
+    border-color: #ccc;
+  }
+
+  td {
+    border-color: #ccc;
+  }
+
+  .table-scroll-wrap {
+    overflow: visible;
+    width: auto;
+    max-width: none;
+    margin: 1em 0;
+  }
+
+  .table-scroll-wrap table {
+    display: table;
+    width: auto;
+    max-width: none;
+    font-size: 0.9em;
+  }
+
+  .table-scroll-wrap table.wide-matrix-table {
+    font-size: 0.72em;
+  }
+
+  .modified-stamp {
+    position: fixed;
+    font-size: 10pt;
+    line-height: 1.1;
+    color: #999;
+    z-index: 9999;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    left: auto;
+  }
+
+  .modified-stamp.position-1 {
+    top: 0.5in;
+    right: 0.75in;
+  }
+
+  .modified-stamp.position-0 {
+    bottom: 0.5in;
+    right: 0.75in;
+  }
+}
+</style>
+</head>
+<body>
+<div class="modified-stamp position-1">Modified: 4/1/2026 13:15:15</div>
+
+<div style="text-align:center; font-size:1.8em; font-weight:bold; line-height:1.2; margin-top:0; margin-bottom:0.2em;">
+Senior Living Community Evaluation System
+</div>
+
+<div style="text-align:center; font-size:1.4em; font-weight:bold; line-height:0.75; margin-top:0.4em; margin-bottom:1.2em;">
+SE Wisconsin / Milwaukee Area – Parkinson’s Care Focus
+</div>
+
+<!-- TOC START -->
+<!-- TOC META: scope=first -->
+
+<h2>Table of Contents</h2>
+
+<ol>
+<li>Full Candidate Set (normalized)</li>
+<li>Strategic Positioning (what each one “Is”)</li>
+<li>Instructions for the Facility Interview/Tour/Scoring Phase</li>
+<li>Side-by-Side Comparison Matrix</li>
+<li>Critical Filter (Parkinson&#8217;s Lens)</li>
+<li>Pre-Filled Facility Intelligence Notes</li>
+<li>Scoring &amp; Weighting System</li>
+<li>Scoring &amp; Ranking Results</li>
+<li>Detailed Scoring Breakdown</li>
+</ol>
+
+<hr />
+
+<!-- TOC END -->
+
+<h2>Bottom Line Up Front</h2>
+
+<ul>
+<li>We now have a broader and still manageable candidate universe of <strong>12 communities</strong>, which is a practical upper limit for the research and phone-screen phase.</li>
+<li>The candidate set still splits naturally into <strong>full-continuum / stronger aging-in-place communities</strong> versus <strong>assisted-living-centered / more limited-continuum options</strong>.</li>
+<li>For Parkinson’s, <strong>care continuum depth + transfer thresholds + nighttime response + internal transition path</strong> matter more than amenities.</li>
+<li>Our plan remains to use a two-round process: <strong>initial phone screening → targeted tours</strong>, followed by shorter finalist visits with Mom.</li>
+<li>Our practical goal is now to narrow the list first to <strong>5–6 tour candidates</strong>, then to <strong>2–3 finalists</strong>.</li>
+</ul>
+
+<hr />
+
+<h2>1. Full Candidate Set (normalized)</h2>
+
+<h3>1.1. Tier 1 – Strong Care Continuum (AL-&gt;SNF) / Higher Clinical Depth</h3>
+
+<ul>
+<li>Saint John’s On The Lake (Milwaukee – East Side)</li>
+<li>Three Pillars Senior Living Communities (Dousman)</li>
+<li>Newcastle Place (Mequon)</li>
+<li>Eastcastle Place (Milwaukee)</li>
+<li>Shorehaven (Oconomowoc)</li>
+<li>Harwood Place / Lutheran Home campus (Wauwatosa)</li>
+</ul>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+
+<h3>1.2. Tier 2 – Strong Challengers / Mixed Continuum</h3>
+
+<ul>
+<li>Tudor Oaks Senior Living Community (Muskego)</li>
+<li>LindenGrove (Waukesha campus)</li>
+<li>The Arboretum Senior Living (Menomonee Falls)</li>
+</ul>
+
+<h3>1.3. Tier 3 – Assisted Living / Lifestyle / Comparison Options</h3>
+
+<ul>
+<li>Forest Ridge Senior Community (Hales Corners)</li>
+<li>Library Square Senior Living (West Allis)</li>
+<li>The Courtyard at Sussex</li>
+</ul>
+
+</div>
+
+<hr />
+
+<h2>2. Strategic Positioning (what each one “Is”)</h2>
+
+<h3>2.1. High-Level Comparison</h3>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col />
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Community </th>
+	<th> Type </th>
+	<th> Key Strength </th>
+	<th> Key Risk </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Saint John’s </td>
+	<td> Urban Life Plan / CCRC </td>
+	<td> Strong clinical depth, central location, Life Care structure </td>
+	<td> Cost / entrance-fee sensitivity </td>
+</tr>
+<tr>
+	<td> Three Pillars </td>
+	<td> Full campus CCRC </td>
+	<td> Excellent continuum, strong rehab/SNF depth </td>
+	<td> Distance from Milwaukee </td>
+</tr>
+<tr>
+	<td> Newcastle Place </td>
+	<td> Upscale Life Plan / CCRC </td>
+	<td> Polished campus, strong IL→AL→SNF path </td>
+	<td> Need to verify clinical-forward depth vs hospitality feel </td>
+</tr>
+<tr>
+	<td> Eastcastle Place </td>
+	<td> Urban Life Plan / CCRC </td>
+	<td> Established continuum, East Side location </td>
+	<td> Aging infrastructure / cost </td>
+</tr>
+<tr>
+	<td> Shorehaven </td>
+	<td> Full campus continuum </td>
+	<td> Strong on-campus transitions, rehab/SNF depth </td>
+	<td> Less modern feel, verify AL thresholds </td>
+</tr>
+<tr>
+	<td> Harwood / Lutheran </td>
+	<td> Connected campus continuum </td>
+	<td> Excellent location, strong clinical support via linked campus </td>
+	<td> Need to verify transition mechanics / priority access </td>
+</tr>
+<tr>
+	<td> Tudor Oaks </td>
+	<td> Faith-based campus continuum </td>
+	<td> Broad continuum, 24/7 medical support signal </td>
+	<td> May feel institutional to some </td>
+</tr>
+<tr>
+	<td> LindenGrove </td>
+	<td> Care-focused AL / memory / therapies </td>
+	<td> Good care reputation, therapy access </td>
+	<td> Less clear long-term continuum than classic CCRC </td>
+</tr>
+<tr>
+	<td> Arboretum </td>
+	<td> AL / memory / IL </td>
+	<td> Supports higher-acuity residents better than many ALs </td>
+	<td> No clearly established on-site SNF </td>
+</tr>
+<tr>
+	<td> Forest Ridge </td>
+	<td> Senior apartments + support services </td>
+	<td> Comfortable apartment model, 24-hour staffing / emergency system </td>
+	<td> Likely lower care ceiling </td>
+</tr>
+<tr>
+	<td> Library Square </td>
+	<td> IL + AL + respite </td>
+	<td> Strong location, potentially lower cost </td>
+	<td> No clear on-site SNF pathway </td>
+</tr>
+<tr>
+	<td> Courtyard Sussex </td>
+	<td> Smaller AL </td>
+	<td> Intimate environment </td>
+	<td> No on-site SNF / limited care continuum, Medicaid transition risk </td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+
+<h2>3. Instructions for the Facility Interview/Tour/Scoring Phase</h2>
+
+<p><strong>Use this system in sequence to ensure the decision is both <em>clinical and personal</em>, not just intuitive:</strong></p>
+
+<ol>
+<li>Review the side-by-side comparison matrix</li>
+<li>Review pre-filled facility intelligence notes</li>
+<li>Conduct initial phone screens before scheduling tours</li>
+<li>Use the evaluation form during interviews and tours to capture answers and ranking scores</li>
+<li>Transcribe the scoring values from your interview sheets to the JSON data entry block at the bottom of this document</li>
+<li>Run the &#8220;Score Senior Care Communities&#8221; script to calculate the final scoring values and produce the ranking results</li>
+<li>Review the final rankings and then reconcile them against emotional fit, location practicality, and Mom’s preferences before making the final selection</li>
+</ol>
+
+<p><strong>Recommended narrowing workflow:</strong></p>
+
+<ul>
+<li><strong>12 → 5–6</strong> by phone screening</li>
+<li><strong>5–6 → 2–3</strong> by solo tours / detailed evaluations</li>
+<li><strong>2–3 → final choice</strong> after shorter follow-up visits with Mom</li>
+</ul>
+
+<p><strong>Recommended initial phone-screen priority order:</strong></p>
+
+<ol>
+<li>Saint John’s</li>
+<li>Three Pillars</li>
+<li>Newcastle</li>
+<li>Shorehaven</li>
+<li>Harwood / Lutheran</li>
+<li>Eastcastle</li>
+<li>Tudor Oaks</li>
+<li>LindenGrove</li>
+<li>Arboretum</li>
+<li>Forest Ridge</li>
+<li>Library Square</li>
+<li>Courtyard Sussex</li>
+</ol>
+
+<hr />
+
+<h2>4. Side-by-Side Comparison Matrix</h2>
+
+<blockquote>
+<p>Use this during research + tours. Fill blanks as you go.</p>
+</blockquote>
+
+<div class="table-scroll-wrap"><table class="wide-matrix-table">
+<colgroup>
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th> Saint John’s </th>
+	<th> Three Pillars </th>
+	<th> Newcastle Place </th>
+	<th> Eastcastle Place </th>
+	<th> Shorehaven </th>
+	<th> Harwood / Lutheran </th>
+	<th> Tudor Oaks </th>
+	<th> LindenGrove </th>
+	<th> Arboretum </th>
+	<th> Forest Ridge </th>
+	<th> Library Square </th>
+	<th> Courtyard Sussex </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> <strong>Type</strong> </td>
+	<td> CCRC </td>
+	<td> CCRC </td>
+	<td> CCRC </td>
+	<td> CCRC </td>
+	<td> Full continuum campus </td>
+	<td> Connected continuum campus </td>
+	<td> CCRC / continuum campus </td>
+	<td> AL / memory / rehab support </td>
+	<td> IL + AL + memory </td>
+	<td> Senior apartments + services </td>
+	<td> IL + AL + respite </td>
+	<td> AL / memory </td>
+</tr>
+<tr>
+	<td> <strong>Campus Style</strong> </td>
+	<td> Urban high-rise </td>
+	<td> Suburban campus </td>
+	<td> Suburban upscale </td>
+	<td> Urban </td>
+	<td> Suburban campus </td>
+	<td> Urban / neighborhood campus </td>
+	<td> Suburban / faith-based campus </td>
+	<td> Suburban clinical </td>
+	<td> Suburban </td>
+	<td> Apartment-style suburban </td>
+	<td> Urban / neighborhood </td>
+	<td> Smaller suburban residential </td>
+</tr>
+<tr>
+	<td> <strong>SNF On-Site</strong> </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes (via Lutheran Home campus) </td>
+	<td> Yes </td>
+	<td> Verify exact structure </td>
+	<td> No clear evidence </td>
+	<td> No clear evidence </td>
+	<td> No clear evidence </td>
+	<td> No </td>
+</tr>
+<tr>
+	<td> <strong>Medicaid (AL)</strong> </td>
+	<td> Likely limited </td>
+	<td> Case-dependent </td>
+	<td> Limited </td>
+	<td> Limited </td>
+	<td> Case-dependent </td>
+	<td> Case-dependent </td>
+	<td> Case-dependent </td>
+	<td> Case-dependent </td>
+	<td> Case-dependent </td>
+	<td> Likely limited / case-dependent </td>
+	<td> Case-dependent </td>
+	<td> Unlikely / case-dependent </td>
+</tr>
+<tr>
+	<td> <strong>Medicaid (SNF)</strong> </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Verify </td>
+	<td> N/A / unclear </td>
+	<td> N/A </td>
+	<td> N/A </td>
+	<td> N/A </td>
+</tr>
+<tr>
+	<td> <strong>2-Person Transfers</strong> </td>
+	<td> Verify </td>
+	<td> Likely yes </td>
+	<td> Verify </td>
+	<td> Verify </td>
+	<td> Likely yes </td>
+	<td> Verify </td>
+	<td> Verify </td>
+	<td> Verify </td>
+	<td> Verify </td>
+	<td> Limited / verify </td>
+	<td> Limited / verify </td>
+	<td> Limited </td>
+</tr>
+<tr>
+	<td> <strong>Night Staffing Depth</strong> </td>
+	<td> Strong </td>
+	<td> Strong </td>
+	<td> Moderate+ </td>
+	<td> Moderate </td>
+	<td> Strong </td>
+	<td> Strong </td>
+	<td> Moderate </td>
+	<td> Moderate+ </td>
+	<td> Moderate </td>
+	<td> Variable </td>
+	<td> Variable / moderate </td>
+	<td> Lower </td>
+</tr>
+<tr>
+	<td> <strong>Parkinson’s Experience</strong> </td>
+	<td> Moderate+ </td>
+	<td> Strong </td>
+	<td> Moderate </td>
+	<td> Moderate </td>
+	<td> Strong </td>
+	<td> Moderate+ </td>
+	<td> Moderate </td>
+	<td> Moderate </td>
+	<td> Moderate </td>
+	<td> Limited–moderate </td>
+	<td> Limited–moderate </td>
+	<td> Limited </td>
+</tr>
+<tr>
+	<td> <strong>PT/OT On Site</strong> </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Unclear / verify </td>
+	<td> No clear evidence </td>
+	<td> No clear evidence </td>
+	<td> No clear evidence </td>
+</tr>
+<tr>
+	<td> <strong>Speech Therapy</strong> </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Yes </td>
+	<td> Unclear / verify </td>
+	<td> No clear evidence </td>
+	<td> No clear evidence </td>
+	<td> No </td>
+</tr>
+<tr>
+	<td> <strong>Environment Quality</strong> </td>
+	<td> High-end </td>
+	<td> Natural campus </td>
+	<td> High-end </td>
+	<td> Older classic </td>
+	<td> Functional / faith-based </td>
+	<td> Established / practical </td>
+	<td> Faith-based campus </td>
+	<td> Clean clinical </td>
+	<td> Standard contemporary AL </td>
+	<td> Comfortable apartment style </td>
+	<td> Smaller urban AL </td>
+	<td> Smaller home-like </td>
+</tr>
+<tr>
+	<td> <strong>Aging-in-Place Strength</strong> </td>
+	<td> High </td>
+	<td> Very High </td>
+	<td> High </td>
+	<td> Moderate–High </td>
+	<td> Very High </td>
+	<td> High </td>
+	<td> Moderate–High </td>
+	<td> Moderate </td>
+	<td> Moderate </td>
+	<td> Low–Moderate </td>
+	<td> Low–Moderate </td>
+	<td> Low </td>
+</tr>
+<tr>
+	<td> <strong>Distance (fill)</strong> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+
+<h2>5. Critical Filter (Parkinson&#8217;s Lens)</h2>
+
+<h3>5.1. Top Tier (Best Fit for Progression)</h3>
+
+<ul>
+<li>Three Pillars</li>
+<li>Shorehaven</li>
+<li>Saint John’s</li>
+<li>Newcastle Place</li>
+<li>Harwood / Lutheran</li>
+</ul>
+
+<p><strong>Why:</strong></p>
+
+<ul>
+<li>Strongest overall continuum profiles</li>
+<li>Lower forced-move risk</li>
+<li>On-site or linked SNF reduces disruption</li>
+<li>Better likelihood of handling mobility decline, dysphagia, therapy needs, and nighttime support</li>
+</ul>
+
+<h3>5.2. Conditional Tier (Depends on Answers to Your Form)</h3>
+
+<ul>
+<li>Eastcastle Place</li>
+<li>Tudor Oaks</li>
+<li>LindenGrove</li>
+<li>The Arboretum</li>
+</ul>
+
+<p><strong>Key unknowns to verify:</strong></p>
+
+<ul>
+<li>Two-person transfer policy</li>
+<li>Night staffing</li>
+<li>Medication timing discipline</li>
+<li>Exact internal transition path when care increases</li>
+</ul>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+
+<h3>5.3. Higher Risk Tier (For This Situation)</h3>
+
+<ul>
+<li>Forest Ridge</li>
+<li>Library Square</li>
+<li>The Courtyard at Sussex</li>
+</ul>
+
+<p><strong>Why:</strong></p>
+
+<ul>
+<li>Lower or less certain care ceiling</li>
+<li>No clearly established on-site SNF path</li>
+<li>Higher likelihood of required external move later</li>
+</ul>
+
+</div>
+
+<hr />
+
+<h2>6. Pre-Filled Facility Intelligence Notes</h2>
+
+<blockquote>
+<p>Use this to walk in informed and ask sharper questions.</p>
+</blockquote>
+
+<h3>6.1. Saint John’s On The Lake (Milwaukee – East Side)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>High-end urban Life Plan / CCRC</li>
+<li>Life Care structure with assisted living and skilled care neighborhoods</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Full continuum (IL → AL → skilled care / rehab)</li>
+<li>Strong location and strong structural aging-in-place protection</li>
+<li>Good therapy access</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Cost / entrance-fee structure</li>
+<li>Less campus feel (vertical living)</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>How do you manage medication timing for Parkinson’s?</li>
+<li>How often are residents reassessed for care level increases?</li>
+<li>Can assisted living residents remain within Saint John’s if they later require skilled care under the Life Care arrangement?</li>
+</ul>
+
+<hr />
+
+<h3>6.2. Three Pillars (Dousman)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>One of the strongest full-continuum campuses in Waukesha County</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Excellent aging-in-place capability</li>
+<li>Strong SNF and rehab reputation</li>
+<li>Good staffing consistency</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Distance from Milwaukee</li>
+<li>More “traditional” feel</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>How many current residents require 2-person assist?</li>
+<li>How do you manage nighttime toileting support?</li>
+<li>At what point do you move someone from AL to skilled nursing?</li>
+</ul>
+
+<hr />
+
+<h3>6.3. Newcastle Place (Mequon)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Newer, upscale Life Plan / CCRC</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Modern facility</li>
+<li>Strong IL → AL → SNF pipeline</li>
+<li>On-site skilled nursing and rehab</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>May prioritize lifestyle over complex care</li>
+<li>Cost</li>
+<li>Need to verify depth of advanced Parkinson’s experience</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>What is your threshold for moving someone out of assisted living?</li>
+<li>Do you regularly manage advanced Parkinson’s cases?</li>
+<li>Can your assisted living manage 2-person transfers, or does that trigger movement to another level of care?</li>
+</ul>
+
+<hr />
+
+<h3>6.4. Eastcastle Place (Milwaukee)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Established urban Life Plan / CCRC</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Full continuum</li>
+<li>Central location</li>
+<li>Strong health center signal</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Older infrastructure</li>
+<li>Variable staffing consistency</li>
+<li>Cost</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>What renovations or updates have been made recently?</li>
+<li>What is your average caregiver tenure?</li>
+<li>How many residents transition internally versus leaving the campus when care escalates?</li>
+</ul>
+
+<hr />
+
+<h3>6.5. Shorehaven (Oconomowoc)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Strong clinical / faith-based continuum campus</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Excellent SNF and rehab depth</li>
+<li>Strong care continuum</li>
+<li>Lower forced-move risk</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Less modern aesthetics</li>
+<li>Slightly institutional feel</li>
+<li>Need to verify assisted living care thresholds in practice</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>What percentage of residents transition internally vs externally?</li>
+<li>How do you handle frequent falls?</li>
+<li>What is the assisted-living threshold for 2-person assist and swallowing issues?</li>
+</ul>
+
+<hr />
+
+<h3>6.6. Harwood Place / Lutheran Home (Wauwatosa)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Assisted living / senior living through Harwood Place linked to Lutheran Home rehab, skilled nursing, and memory care</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Excellent location for family access and major medical systems</li>
+<li>Strong clinical support via linked campus</li>
+<li>Practical continuum through connected system</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Need to verify exactly how transitions occur between Harwood and Lutheran Home</li>
+<li>Need to verify whether internal transition priority is guaranteed</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>If a Harwood resident declines, what is the actual process for moving into Lutheran Home services?</li>
+<li>Is priority access or placement guaranteed in writing?</li>
+<li>Can Harwood assisted living itself manage progressive Parkinson’s decline before Lutheran Home placement is needed?</li>
+</ul>
+
+<hr />
+
+<h3>6.7. Tudor Oaks (Muskego)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Faith-based full campus continuum community</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Full continuum available</li>
+<li>Stable organization</li>
+<li>24/7 professional medical staff signal</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Institutional feel for some</li>
+<li>Variable modernization</li>
+<li>Need to verify exact Medicaid / transition path</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>What is your SNF quality rating?</li>
+<li>How integrated is assisted living with skilled nursing?</li>
+<li>Can your assisted living manage 2-person transfers and advanced Parkinson’s-related mobility decline?</li>
+</ul>
+
+<hr />
+
+<h3>6.8. LindenGrove (Waukesha)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Care-focused assisted living / memory care / rehab support campus</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Known for good hands-on care</li>
+<li>On-site PT/OT/speech signal</li>
+<li>Strong nursing-support signal</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Less clear continuum than classic CCRC</li>
+<li>Need to verify Medicaid and long-term transition path</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>At what point must a resident leave?</li>
+<li>Where do residents typically transition to?</li>
+<li>What is the long-term path if a resident’s needs progress beyond assisted living / memory care?</li>
+</ul>
+
+<hr />
+
+<h3>6.9. The Arboretum Senior Living (Menomonee Falls)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Independent living + assisted living + memory care + respite</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Better acuity signal than many smaller ALs</li>
+<li>Supports medication management and non-ambulatory care</li>
+<li>Worth screening as a dark-horse contender</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>No clearly established on-site SNF</li>
+<li>Need to verify transfer threshold and forced-move risk</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>Can your assisted living manage 2-person transfers and non-ambulatory residents in practice?</li>
+<li>What happens if a resident needs skilled nursing care?</li>
+<li>Can a resident remain on your campus as care needs increase, or would that require an outside move?</li>
+</ul>
+
+<hr />
+
+<h3>6.10. Forest Ridge Senior Community (Hales Corners)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Senior apartment community with assisted living services available</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Comfortable apartment model</li>
+<li>24-hour staffing / emergency call system</li>
+<li>May be emotionally easier transition for some residents</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Likely lower care ceiling</li>
+<li>Appears more lifestyle / support hybrid than full clinical continuum</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>What does “assisted living services available” mean operationally?</li>
+<li>Can residents stay if they develop frequent falls, swallowing issues, or need 2-person assist?</li>
+<li>If care increases beyond your model, where do residents usually go?</li>
+</ul>
+
+<hr />
+
+<h3>6.11. Library Square Senior Living (West Allis)</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Independent living + assisted living + respite / companion-living model</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Strong location</li>
+<li>Potentially lower cost</li>
+<li>Transfer assistance and non-ambulatory support signal</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>No clearly established on-site SNF pathway</li>
+<li>Likely higher external-transfer risk than continuum campuses</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>Your materials mention transfer assistance and non-ambulatory care — what are the actual limits?</li>
+<li>Can assisted living residents stay if they later require 2-person assist?</li>
+<li>What happens if a resident needs skilled nursing or runs out of private-pay funds?</li>
+</ul>
+
+<hr />
+
+<h3>6.12. The Courtyard at Sussex</h3>
+
+<p><strong>Positioning</strong></p>
+
+<ul>
+<li>Smaller assisted living / memory care community</li>
+</ul>
+
+<p><strong>Strengths</strong></p>
+
+<ul>
+<li>Intimate environment</li>
+<li>Lower scale</li>
+<li>May feel less overwhelming</li>
+</ul>
+
+<p><strong>Risks</strong></p>
+
+<ul>
+<li>Lower care ceiling</li>
+<li>Limited medical support</li>
+<li>No clear on-site SNF path</li>
+</ul>
+
+<p><strong>Facility-Specific Follow-Up Questions</strong></p>
+
+<ul>
+<li>Can you support 2-person transfers?</li>
+<li>What happens if swallowing issues develop?</li>
+<li>At what point would a resident need to leave your community for higher care?</li>
+</ul>
+
+<hr />
+
+<h2>7. Scoring &amp; Weighting System</h2>
+
+<h3>7.1. Scoring Scale</h3>
+
+<ul>
+<li>1 = Poor</li>
+<li>2 = Below average</li>
+<li>3 = Acceptable</li>
+<li>4 = Strong</li>
+<li>5 = Excellent</li>
+</ul>
+
+<h3>7.2. Weighting Model</h3>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th> Weight </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical Capability </td>
+	<td> 25% </td>
+</tr>
+<tr>
+	<td> Staffing &amp; Coverage </td>
+	<td> 20% </td>
+</tr>
+<tr>
+	<td> Parkinson’s Competency </td>
+	<td> 20% </td>
+</tr>
+<tr>
+	<td> Financial Transparency </td>
+	<td> 15% </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td> 10% </td>
+</tr>
+<tr>
+	<td> Location / Practicality </td>
+	<td> 10% </td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+
+<!-- SCORE RESULTS START -->
+
+<h2>8. Scoring &amp; Ranking Results</h2>
+
+<h3>8.1. Scoring Comparison Matrix</h3>
+
+<div class="table-scroll-wrap"><table class="wide-matrix-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Facility </th>
+	<th style="text-align:right;"> Clinical (25) </th>
+	<th style="text-align:right;"> Staffing (20) </th>
+	<th style="text-align:right;"> Parkinson’s (20) </th>
+	<th style="text-align:right;"> Financial (15) </th>
+	<th style="text-align:right;"> Environment (10) </th>
+	<th style="text-align:right;"> Location (10) </th>
+	<th style="text-align:right;"> <strong>Total (100)</strong> </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Saint John&#8217;s On The Lake (Milwaukee – East Side) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Three Pillars (Dousman) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Newcastle Place (Mequon) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Eastcastle Place (Milwaukee) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Shorehaven (Oconomowoc) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Harwood Place / Lutheran Home (Wauwatosa) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Tudor Oaks Senior Living Community (Muskego) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Linden Grove (Waukesha) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> The Arboretum Senior Living (Menomonee Falls) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Forest Ridge Senior Community (Hales Corners) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Library Square Senior Living (West Allis) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> The Courtyard at Sussex </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+
+<h3>8.2. Ranked Scoring Summary</h3>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col style="text-align:right;"/>
+<col />
+<col style="text-align:right;"/>
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:right;"> Rank </th>
+	<th> Facility </th>
+	<th style="text-align:right;"> Final Score </th>
+	<th> Recommendation </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:right;"> 1 </td>
+	<td> Saint John&#8217;s On The Lake (Milwaukee – East Side) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 2 </td>
+	<td> Three Pillars (Dousman) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 3 </td>
+	<td> Newcastle Place (Mequon) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 4 </td>
+	<td> Eastcastle Place (Milwaukee) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 5 </td>
+	<td> Shorehaven (Oconomowoc) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 6 </td>
+	<td> Harwood Place / Lutheran Home (Wauwatosa) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 7 </td>
+	<td> Tudor Oaks Senior Living Community (Muskego) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 8 </td>
+	<td> Linden Grove (Waukesha) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 9 </td>
+	<td> The Arboretum Senior Living (Menomonee Falls) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 10 </td>
+	<td> Forest Ridge Senior Community (Hales Corners) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 11 </td>
+	<td> Library Square Senior Living (West Allis) </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+<tr>
+	<td style="text-align:right;"> 12 </td>
+	<td> The Courtyard at Sussex </td>
+	<td style="text-align:right;"> 0 </td>
+	<td> Poor fit </td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+
+<h2>9. Detailed Scoring Breakdown</h2>
+
+<h3>9.1. Saint John&#8217;s On The Lake (Milwaukee – East Side)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.2. Three Pillars (Dousman)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.3. Newcastle Place (Mequon)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.4. Eastcastle Place (Milwaukee)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.5. Shorehaven (Oconomowoc)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.6. Harwood Place / Lutheran Home (Wauwatosa)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.7. Tudor Oaks Senior Living Community (Muskego)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.8. Linden Grove (Waukesha)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.9. The Arboretum Senior Living (Menomonee Falls)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.10. Forest Ridge Senior Community (Hales Corners)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.11. Library Square Senior Living (West Allis)</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<h3>9.12. The Courtyard at Sussex</h3>
+
+<ul>
+<li><strong>Final Score:</strong> 0</li>
+<li><strong>Weighted Total Before Penalties:</strong> 0</li>
+<li><strong>Penalty Total:</strong> 0</li>
+<li><strong>Recommendation:</strong> Poor fit</li>
+</ul>
+
+<div class="table-scroll-wrap"><table class="normal-table">
+<colgroup>
+<col />
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th> Category </th>
+	<th style="text-align:right;"> Raw Score (0–5) </th>
+	<th style="text-align:right;"> Weight </th>
+	<th style="text-align:right;"> Weighted Points </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Clinical </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 25 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Staffing </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Parkinsons </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 20 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Financial </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 15 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Environment </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+<tr>
+	<td> Location </td>
+	<td style="text-align:right;"> 0 </td>
+	<td style="text-align:right;"> 10 </td>
+	<td style="text-align:right;"> 0 </td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Penalties Applied:</strong> None</p>
+
+<hr />
+
+<!-- SCORE RESULTS END -->
+
+<!-- JSON DATA START -->
+[
+{
+    "facility": "Saint John's On The Lake (Milwaukee – East Side)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Three Pillars (Dousman)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Newcastle Place (Mequon)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Eastcastle Place (Milwaukee)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Shorehaven (Oconomowoc)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Harwood Place / Lutheran Home (Wauwatosa)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Tudor Oaks Senior Living Community (Muskego)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Linden Grove (Waukesha)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "The Arboretum Senior Living (Menomonee Falls)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Forest Ridge Senior Community (Hales Corners)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "Library Square Senior Living (West Allis)",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+},
+{
+    "facility": "The Courtyard at Sussex",
+    "clinical": 0,
+    "staffing": 0,
+    "parkinsons": 0,
+    "financial": 0,
+    "environment": 0,
+    "location": 0,
+    "penalties": {
+      "vagueMedicaid": false,
+      "noWrittenTransferPolicy": false,
+      "no24hNurse": false,
+      "unclearMedTiming": false
+    },
+    "notes": ""
+}
+]
+<!-- JSON DATA END -->
+
+<h2>Source Notes / Current Official Sites Reviewed for Added Communities</h2>
+
+<ul>
+<li><p>Harwood Place / Lutheran Home:</p></li>
+<li><p> https://www.thelutheranhome.org/harwood-place/</p></li>
+<li><p> https://www.thelutheranhome.org/harwood-assisted/</p></li>
+<li><p> https://www.thelutheranhome.org/lutheran-home/</p></li>
+<li><p> https://www.thelutheranhome.org/skilled-nursing/</p></li>
+<li><p>The Arboretum Senior Living:</p></li>
+<li><p> https://sinceriseniorliving.com/the-arboretum/</p></li>
+<li><p>Forest Ridge Senior Community:</p></li>
+<li><p> https://www.wimmercommunities.com/apartments/wi/hales-corners/forest-ridge-senior/</p></li>
+<li><p> https://www.wimmercommunities.com/apartments/wi/hales-corners/forest-ridge-senior/assisted-living</p></li>
+<li><p> https://www.wimmercommunities.com/apartments/wi/hales-corners/forest-ridge-senior/amenities</p></li>
+<li><p>Library Square Senior Living:</p></li>
+<li><p> https://sinceriseniorliving.com/library-square/</p></li>
+<li><p> https://sinceriseniorliving.com/library-square/assisted-living/</p></li>
+<li><p>The Courtyard at Sussex:</p></li>
+<li><p> https://thecourtyardatsussex.com/</p></li>
+<li><p> https://thecourtyardatsussex.com/assisted-living/</p></li>
+<li><p>Eastcastle Place:</p></li>
+<li><p> https://www.eastcastleplace.com/</p></li>
+<li><p> https://www.eastcastleplace.com/life-plan/</p></li>
+<li><p> https://www.eastcastleplace.com/skilled-nursing/</p></li>
+<li><p>Tudor Oaks:</p></li>
+<li><p> https://tudoroaks.net/</p></li>
+<li><p> https://tudoroaks.net/living-options/assisted-living/</p></li>
+<li><p> https://tudoroaks.net/living-options/the-health-center/</p></li>
+<li><p>LindenGrove Waukesha:</p></li>
+<li><p> https://illuminus.us/communities/lindengrove-waukesha</p></li>
+<li><p>Saint John’s:</p></li>
+<li><p> https://saintjohnsmilw.org/</p></li>
+<li><p> https://saintjohnsmilw.org/living-options/life-care/</p></li>
+<li><p> https://saintjohnsmilw.org/living-options/assisted-lving/</p></li>
+<li><p>Three Pillars:</p></li>
+<li><p> https://www.threepillars.org/</p></li>
+<li><p> https://www.threepillars.org/living-care-options/assisted-living-memory-care/</p></li>
+<li><p> https://www.threepillars.org/skilled-nursing-landing/</p></li>
+<li><p>Newcastle Place:</p></li>
+<li><p> https://www.newcastleplace.com/</p></li>
+<li><p> https://www.newcastleplace.com/senior-living/</p></li>
+<li><p> https://www.newcastleplace.com/supported-living/assisted-living-mequon-wi/</p></li>
+<li><p> https://www.newcastleplace.com/supported-living/skilled-nursing-mequon-wi/</p></li>
+<li><p>Shorehaven:</p></li>
+<li><p> https://shorehavenliving.org/</p></li>
+<li><p> https://shorehavenliving.org/assisted-living/</p></li>
+<li><p> https://shorehavenliving.org/skilled-nursing-facility/</p></li>
+<li><p> https://shorehavenliving.org/rehabilitation/</p></li>
+</ul>
+</body>
+</html>
